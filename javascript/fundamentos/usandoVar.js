@@ -10,11 +10,11 @@
 }
 console.log(sera);
 
-function teste() {
+function Teste() {
     var local = 123;
     console.log(local);
 }
-teste();
+Teste();
 //console.log(local); isso dá erro, porque você  não pode acessar variável criada dentro da função
 
 /*var só tem 2 scoopos possíveis, ou ela tem scoopo global, visivel em toda a sua aplicação e na variável global 

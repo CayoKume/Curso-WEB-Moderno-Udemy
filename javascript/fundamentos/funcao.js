@@ -13,12 +13,12 @@ imprimirSoma(2, 5, 10, 20, 50, 4);
 imprimirSoma();
 
 //função com retorno
-function soma(a, b = 1) {
+function Soma(a, b = 1) {
     return a + b;
 };
-console.log(soma(2.3, 3));
-console.log(soma(2.3));
-console.log(soma());
+console.log(Soma(2.3, 3));
+console.log(Soma(2.3));
+console.log(Soma());
 
 console.log('armazenando uma função em uma variável: ');
 
