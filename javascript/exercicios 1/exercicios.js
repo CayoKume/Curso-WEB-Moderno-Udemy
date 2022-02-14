@@ -395,32 +395,139 @@ cardapio(600, 4);
 //Exercio 26
 //Exercio 27
 //Exercio 28
+
 //Exercio 29
-//Exercio 30
-//Exercio 31
-//Exercio 32
-//Exercio 33
-//Exercio 34
-//Exercio 35
-//Exercio 36
-//Exercio 37
-//Exercio 38
-//Exercio 39
-function impares(max = 100, min = 0) {
-    let dividendo = max - min;
-    for (let index = 0; index < notas.length; index++) {
-        if (max < min) {
-            console.log(`inverteu`)
-            dividendo = min - max;
-        }
-        if (!!(dividendo % 2)) {
-            console.log(`é impar`)
+let valores = [-1, -5, -10, 0, 5, 80, 4, -9, 7, 10, 7];
+let estaoNoIntervalo = 0;
+let estaoForaDoIntervalo = 0;
+
+function intervalo([]) {
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] >= 10 && valores[i] <= 20) {
+            estaoNoIntervalo++;
         } else {
-            console.log(`é par`)
+            estaoForaDoIntervalo++;
+        };
+    };
+    console.log(`Quantidade de números que estão no intervalo: ${estaoNoIntervalo}, Quantidade de números que não estão no intervalo: ${estaoForaDoIntervalo}`);
+};
+intervalo(valores);
+//Exercio 30
+let valores = [-1, -5, -10, 0, 5, 80, 4, -9, 7, 10, 7];
+let compara = 0;
+
+function maiorValor([]) {
+    for (let i = 0; i < valores.length; i++) {
+        if (compara === 0) {
+            compara = valores[i]
+        } else if (valores[i] > compara) {
+            compara = valores[i]
+        };
+    };
+    console.log(compara);
+};
+maiorValor(valores);
+//Exercio 31
+let valores = [-1, -5, -10, 0, 5, 80, 4, -9, 7, 10, 7];
+let contador = 0;
+
+function negativos([]) {
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] < 0) {
+            contador++
+        };
+    };
+    console.log(contador);
+};
+negativos(valores);
+//Exercio 32
+let valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let resultado = 0;
+
+function media([]) {
+    for (let i = 0; i < valores.length; i++) {
+        resultado += valores[i];
+    };
+    console.log(resultado / valores.length);
+};
+media(valores);
+//Exercio 33
+let vetorInteiro = [1, 2, 3, 4];
+let vetorString = ['Cayo', 'Camila', 'Pedro', 'Olivia'];
+let vetorDouble = [1.1, 2.2, 3.3, 4.4];
+
+function concat([], [], []) {
+    let vetorResultado = vetorInteiro.concat(vetorString, vetorDouble);
+    console.log(vetorResultado);
+}
+concat(vetorInteiro, vetorString, vetorDouble);
+//Exercio 34
+
+//Exercio 35
+let vetorPilha = [1, 2, 3, 4, 5];
+let vetorAdiciona = [6, 7, 8, 9, 10];
+
+function empurra([], []) {
+    for (let i = 0; i < vetorAdiciona.length; i++) {
+        vetorPilha.push(vetorAdiciona[i]);
+    };
+    console.log(vetorPilha);
+};
+empurra(vetorPilha, vetorAdiciona);
+//Exercio 36
+let decimal = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.1];
+let inteiro = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function funcao1([], []) {
+    for (let i = 0; i < decimal.length; i++) {
+        console.log(`${inteiro[i]} + ${decimal[i]}`);
+        let soma = decimal[i] + inteiro[i];
+        console.log(soma);
+    };
+};
+
+function funcao2([], []) {
+    for (let i = 0; i < inteiro.length; i++) {
+        if (inteiro[i] > 5 && decimal[i] > 5) {
+            console.log(`${inteiro[i]} + ${decimal[i]}`);
+            let soma = inteiro[i] + decimal[i];
+            console.log(soma);
         };
     };
 };
-impares(0, 4);
+funcao1(decimal, inteiro);
+funcao2(decimal, inteiro);
+//Exercio 37
+function pa(a1, n, r) {
+    for (let i = 0; i < n; i++) {
+        a1 = a1 + r
+    };
+    console.log(a1);
+};
+
+function pg(a1, n, r) {
+    for (let i = 0; i < n - 1; i++) {
+        console.log(a1 = Math.pow(a1, r));
+    };
+};
+pa(2, 8, 4);
+pg(3, 2, 3);
+//Exercio 38
+function impares(max = 100, min = 0) {
+    let dividendo = max - min;
+    if (max < min) {
+        dividendo = min - max;
+    };
+    for (let i = 0; i <= dividendo; i++) {
+        if (!!(i % 2)) {
+            console.log(`${i} é impar`);
+        } else {};
+    };
+};
+impares(0, 100);
+impares(100, 0);
+//Exercio 39
+
 //Exercio 40
 let notas = [0, 4.9, 5, 6.9, 7, 8.9, 9, 10];
 
