@@ -305,7 +305,86 @@ plano('b', 100);
 plano('c', 100);
 plano('d', 100);
 //Exercio 18
-//Exercio 19
+function extenso(n) {
+    switch (n) {
+        case 1:
+            console.log('Um');
+            break;
+        case 2:
+            console.log('Dois');
+            break;
+        case 3:
+            console.log('Três');
+            break;
+        case 4:
+            console.log('Quatro');
+            break;
+        case 5:
+            console.log('Cinco');
+            break;
+        case 6:
+            console.log('Seis');
+            break;
+        case 7:
+            console.log('Sete');
+            break;
+        case 8:
+            console.log('Oito');
+            break;
+        case 9:
+            console.log('Nove');
+            break;
+        case 10:
+            console.log('Dez');
+            break;
+        default:
+            console.log('Número fora do intervalo');
+            break;
+    };
+};
+extenso(1);
+extenso(2);
+extenso(3);
+extenso(4);
+extenso(5);
+extenso(6);
+extenso(7);
+extenso(8);
+extenso(9);
+extenso(10);
+extenso(11)
+    //Exercio 19
+function cardapio(codigo, quantidade) {
+    switch (codigo) {
+        case 100:
+            console.log(`Cachorro Quente R$ 3,00 * ${quantidade}: Total = ${3 * quantidade}`);
+            break;
+        case 200:
+            console.log(`Hambúrguer Simples R$ 4,00 * ${quantidade}: Total = ${4 * quantidade}`);
+            break;
+        case 300:
+            console.log(`Cheeseburguer R$ 5,50 * ${quantidade}: Total = ${5.5 * quantidade}`);
+            break;
+        case 400:
+            console.log(`Bauru R$ 7,50 * ${quantidade}: Total = ${7.5 * quantidade}`);
+            break;
+        case 500:
+            console.log(`Refrigerante  R$ 3,50 * ${quantidade}: Total = ${3.5 * quantidade}`);
+            break;
+        case 600:
+            console.log(`Suco R$ 2,80 * ${quantidade}: Total = ${2.8 * quantidade}`);
+            break;
+        default:
+            console.log('Produto Inexistente');
+            break;
+    };
+};
+cardapio(100, 4);
+cardapio(200, 4);
+cardapio(300, 4);
+cardapio(400, 4);
+cardapio(500, 4);
+cardapio(600, 4);
 //Exercio 20
 
 //Exercio 21
