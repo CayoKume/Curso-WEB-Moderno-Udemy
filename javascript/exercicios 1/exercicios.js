@@ -386,16 +386,209 @@ cardapio(400, 4);
 cardapio(500, 4);
 cardapio(600, 4);
 //Exercio 20
+function sacarDinheiro(valorSaque) {
+    let contador100 = 0
+    let contador50 = 0
+    let contador10 = 0
+    let contador5 = 0
+    let contador1 = 0
+    let valorNota = calcularValorNota(valorSaque)
+    while (valorSaque >= valorNota) {
+        switch (valorNota) {
+            case 100:
+                valorSaque -= 100
+                contador100++
+                break
+            case 50:
+                valorSaque -= 50
+                contador50++
+                break
+            case 10:
+                valorSaque -= 10
+                contador10++
+                break
+            case 5:
+                valorSaque -= 5
+                contador5++
+                break
+            case 1:
+                contador1++
+                valorSaque -= 1
+                break
+        }
 
+        valorNota = calcularValorNota(valorSaque)
+
+    }
+    return elaborarResultado(contador100, contador50, contador10, contador5, contador1)
+}
+
+function calcularValorNota(valorSaque) {
+    if (valorSaque >= 100) {
+        return 100
+    } else if (valorSaque >= 50) {
+        return 50
+    } else if (valorSaque >= 10) {
+        return 10
+    } else if (valorSaque >= 5) {
+        return 5
+    } else if (valorSaque >= 1) {
+        return 1
+    }
+}
+
+function elaborarResultado(contador100, contador50, contador10, contador5, contador1) {
+    let resultado = ''
+
+    if (contador100 > 0) {
+        resultado += `${contador100} nota(s) de R$ 100. `
+    }
+
+    if (contador50 > 0) {
+        resultado += `${contador50} nota(s) de R$ 50. `
+    }
+
+    if (contador10 > 0) {
+        resultado += `${contador10} nota(s) de R$ 10. `
+    }
+
+    if (contador5 > 0) {
+        resultado += `${contador5} nota(s) de R$ 5. `
+    }
+
+    if (contador1 > 0) {
+        resultado += `${contador1} nota(s) de R$ 1. `
+    }
+
+    return resultado
+}
+
+console.log(sacarDinheiro(153));
 //Exercio 21
+function plano(idade) {
+    if (idade < 10) {
+        return 180
+    } else if (idade < 30) {
+        return 150
+    } else if (idade < 60) {
+        return 195
+    } else {
+        return 230
+    }
+}
+
+console.log(plano(8));
+console.log(plano(15));
+console.log(plano(35));
+console.log(plano(52));
+console.log(plano(80));
 //Exercio 22
+function anuidade(mes, valor) {
+    switch (mes) {
+        case 1:
+            console.log(valor + (valor * 1.05));
+            break;
+        case 2:
+            console.log(valor + (valor * 1.10));
+            break;
+        case 3:
+            console.log(valor + (valor * 1.15));
+            break;
+        case 4:
+            console.log(valor + (valor * 1.20));
+            break;
+        case 5:
+            console.log(valor + (valor * 1.25));
+            break;
+        case 6:
+            console.log(valor + (valor * 1.30));
+            break;
+        case 7:
+            console.log(valor + (valor * 1.35));
+            break;
+        case 8:
+            console.log(valor + (valor * 1.40));
+            break;
+        case 9:
+            console.log(valor + (valor * 1.45));
+            break;
+        case 10:
+            console.log(valor + (valor * 1.50));
+            break;
+        case 11:
+            console.log(valor + (valor * 1.55));
+            break;
+        case 12:
+            console.log(valor + (valor * 1.60));
+            break;
+        default:
+            console.log('valor invalido');
+            break;
+    };
+};
+anuidade(12, 100);
+anuidade(1, 100);
 //Exercio 23
+function ponderada(codigo, n1, n2, n3) {
+    let media = (((4 * n1) + (3 * n2) + (3 * n3)) / (4 + 3 + 3));
+    if (media >= 5) {
+        console.log(`Aluno: ${codigo} com notas ${n1}, ${n2}, ${n3} e média ${media} Aprovado`);
+    } else {
+        console.log(`Aluno: ${codigo} com notas ${n1}, ${n2}, ${n3} e média ${media} Reprovado`);
+    };
+};
+ponderada('Cayo', 10, 10, 10);
+ponderada('João', 0, 0, 0);
 //Exercio 24
+function helloworld() {
+    let i = 0;
+    while (i < 11) {
+        i++;
+        console.log('Hello World');
+    };
+};
+helloworld();
 //Exercio 25
+function exibe(n) {
+    for (let i = 0; i <= n; i++) {
+        console.log(i);
+
+    };
+};
+exibe(50);
 //Exercio 26
+function pares(max = 100, min = 0) {
+    let dividendo = max - min;
+    if (max < min) {
+        dividendo = min - max;
+    };
+    for (let i = 0; i <= dividendo; i++) {
+        if (!!(i % 2)) {
+
+        } else {
+            console.log(`${i} é par`);
+        };
+    };
+};
+pares(0, 100);
+pares(100, 0);
 //Exercio 27
 //Exercio 28
+let valores = [1, 5, 10, 0, 5, 80, 4, 9, 7, 10, 7, 20, 32, 34, 25, 35];
+let impar = 0;
+let par = 0;
 
+function imparEPar([]) {
+    for (let i = 0; i < valores.length; i++) {
+        if (!!(valores[i] % 2)) {
+            impar++;
+        } else {
+            par++;
+        };
+    };
+    console.log(`${impar} Números são impares e ${par} Números são pares`);
+};
+imparEPar(valores);
 //Exercio 29
 let valores = [-1, -5, -10, 0, 5, 80, 4, -9, 7, 10, 7];
 let estaoNoIntervalo = 0;
@@ -462,6 +655,27 @@ function concat([], [], []) {
 }
 concat(vetorInteiro, vetorString, vetorDouble);
 //Exercio 34
+function verificacaoDeString(string1, string2) {
+    let estaContido = true;
+    for (let i = 0; i < string1.length; i++) {
+        let caractereString1 = string1.charAt(i).toLowerCase()
+        for (let j = 0; j < string2.length; j++) {
+            let caractereString2 = string2.charAt(j).toLowerCase()
+            if (caractereString1 == caractereString2) {
+                estaContido = true
+                break
+            } else {
+                estaContido = false
+            }
+        }
+        if (!estaContido) {
+            return estaContido
+        }
+    }
+    return estaContido
+}
+
+console.log(verificacaoDeString('abc', 'cba'))
 
 //Exercio 35
 let vetorPilha = [1, 2, 3, 4, 5];
@@ -527,8 +741,26 @@ function impares(max = 100, min = 0) {
 impares(0, 100);
 impares(100, 0);
 //Exercio 39
+function trocaValores(vetorA, vetorB) {
+    if (vetorA.length == vetorB.length) {
+        for (let i = 0; i < vetorA.length; i++) {
+            vetorA[i] = vetorA[i] + vetorB[i]
+            vetorB[i] = vetorA[i] - vetorB[i]
+            vetorA[i] = vetorA[i] - vetorB[i]
+        }
+    } else {
+        return 'Vetores de tamanhos diferentes.'
+    }
 
-//Exercio 40
+    console.log('Novo vetor A: ' + vetorA)
+    console.log('Novo vetor B: ' + vetorB)
+}
+
+let vetorA = [1, 2, 3]
+let vetorB = [4, 5, 6]
+
+trocaValores(vetorA, vetorB)
+    //Exercio 40
 let notas = [0, 4.9, 5, 6.9, 7, 8.9, 9, 10];
 
 function conceitos([]) {

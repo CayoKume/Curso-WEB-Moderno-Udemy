@@ -20,7 +20,7 @@ console.log(!!{});
 console.log(!!Infinity);
 console.log(!!(isAtivo = true));
 console.log(!!(isAtivo = 0)); //retorna falso mas porque pega o valor 0 e zero é tratado como false
-let dividendo = 4;
+let dividendo = 5;
 console.log(!!(dividendo % 2));
 
 console.log('os que se comportam como false..');
